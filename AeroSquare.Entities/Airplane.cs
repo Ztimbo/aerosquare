@@ -13,5 +13,8 @@ namespace AeroSquare.Entities
         public int Id { get; set; }
         [StringLength(100)]
         public string Name { get; set; }
+        public short Capacity { get; set; }
+        public short FlightCrew { get; set; }
+
     }
 }

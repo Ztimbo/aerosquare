@@ -9,5 +9,7 @@ namespace AeroSquare.Entities.DTOs
     public class AirplaneDTO
     {
         public string Name { get; set; }
+        public short Capacity { get; set; }
+        public short FlightCrew { get; set; }
     }
 }

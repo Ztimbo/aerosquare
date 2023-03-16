@@ -41,6 +41,8 @@ namespace AeroSquare.Repository.Repos
             }
 
             savedAirplane.Name = airplane.Name;
+            savedAirplane.Capacity = airplane.Capacity;
+            savedAirplane.FlightCrew = airplane.FlightCrew;
             _flightsDbContextEF.Airplane.Update(savedAirplane);
             await _flightsDbContextEF.SaveChangesAsync();
             return savedAirplane;
