@@ -30,6 +30,8 @@ namespace AeroSquare.Repository.DataContext
                 entity.ToTable("Airplane");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name).HasMaxLength(100);
+                entity.Property(e => e.Capacity).HasMaxLength(32767);
+                entity.Property(e => e.FlightCrew).HasMaxLength(32767);
             });
 
             modelBuilder.Entity<City>(entity =>
