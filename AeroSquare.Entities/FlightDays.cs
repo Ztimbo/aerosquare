@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AeroSquare.Entities.DTOs
+namespace AeroSquare.Entities
 {
-    public class CityDTO
+    public class FlightDays
     {
+        public int FlightDayId { get; set; }
         public string Name { get; set; }
+        public ICollection<Flight> Flights { get; set; }
     }
 }

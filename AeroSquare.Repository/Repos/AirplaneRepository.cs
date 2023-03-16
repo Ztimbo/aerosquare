@@ -33,7 +33,7 @@ namespace AeroSquare.Repository.Repos
 
         public async Task<Airplane> UpdateAirplane(Airplane airplane)
         {
-            var savedAirplane = _flightsDbContextEF.Airplane.FirstOrDefault(x => x.Id == airplane.Id);
+            var savedAirplane = _flightsDbContextEF.Airplane.FirstOrDefault(x => x.AirplaneId == airplane.AirplaneId);
 
             if(savedAirplane == null)
             {

@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 
 namespace AeroSquare.Entities
 {
-    public class Airplane
+    public class Destination
     {
         [Key]
-        public int AirplaneId { get; set; }
-        [StringLength(100)]
-        public string Name { get; set; }
-        public short Capacity { get; set; }
-        public short FlightCrew { get; set; }
+        public int DestinationId { get; set; }
+        public string CityId { get; set; }
 
         public Flight Flight { get; set; }
-
+        public City City { get; set; }
     }
 }
