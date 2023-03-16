@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AeroSquare.Entities.DTOs
 {
-    public class CityDTO
+    public class OriginDTO
     {
         public string Name { get; set; }
     }

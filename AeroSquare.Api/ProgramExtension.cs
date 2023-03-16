@@ -18,10 +18,12 @@ namespace AeroSquare.Api
             //Services
             services.AddTransient<IAirplaneService, AirplaneService>();
             services.AddTransient<ICityService, CityService>();
+            services.AddTransient<IOriginService, OriginService>();
 
             //Repos
             services.AddTransient<IAirplaneRepository, AirplaneRepository>();
             services.AddTransient<ICityRepository, CityRepository>();
+            services.AddTransient<IOriginRepository, OriginRepository>();
 
             //AutoMapper
             services.AddAutoMapper(typeof(Program));
@@ -30,6 +32,7 @@ namespace AeroSquare.Api
             {
                 mc.AddProfile(new AirplaneProfile());
                 mc.AddProfile(new CityProfile());
+                mc.AddProfile(new OriginProfile());
             });
 
             IMapper mapper = mapperConfig.CreateMapper();

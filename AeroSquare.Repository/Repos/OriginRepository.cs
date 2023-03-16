@@ -12,44 +12,44 @@ using System.Threading.Tasks;
 
 namespace AeroSquare.Repository.Repos
 {
-    public class CityRepository : GenericRepo<City>, ICityRepository
+    public class OriginRepository : GenericRepo<Origin>, IOriginRepository
     {
         private readonly IFlightsDbContextEF _flightsDbContextEF;
         private readonly IMapper _mapper;
 
-        public CityRepository(IFlightsDbContextEF flightsDbContextEF, IMapper mapper) : base(flightsDbContextEF)
+        public OriginRepository(IFlightsDbContextEF flightsDbContextEF, IMapper mapper) : base(flightsDbContextEF)
         {
             _flightsDbContextEF = flightsDbContextEF;
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<CityDTO>> GetCities()
+        public async Task<IEnumerable<OriginDTO>> GetOrigins()
         {
             var result = _flightsDbContextEF.City;
-            return _mapper.Map<IEnumerable<CityDTO>>(result);
+            return _mapper.Map<IEnumerable<OriginDTO>>(result);
         }
 
-        public async Task<bool> SaveCity(City city)
+        public async Task<bool> SaveOrigin(Origin origin)
         {
-            _flightsDbContextEF.City.Add(city);
+            _flightsDbContextEF.Origin.Add(origin);
             await _flightsDbContextEF.SaveChangesAsync();
             return true;
         }
 
-        public async Task<City> UpdateCity(City city)
+        public async Task<Origin> UpdateOrigin(Origin origin)
         {
-            var savedCity = _flightsDbContextEF.City.FirstOrDefault(x => x.CityId == city.CityId);
+            var savedOrigin = _flightsDbContextEF.Origin.FirstOrDefault(x => x.OriginId == origin.OriginId);
 
-            if (savedCity == null)
+            if (savedOrigin == null)
             {
                 throw new FileNotFoundException();
             }
 
-            savedCity.Name = city.Name;
+            savedOrigin.CityId = origin.CityId;
 
-            _flightsDbContextEF.City.Update(savedCity);
+            _flightsDbContextEF.Origin.Update(savedOrigin);
             await _flightsDbContextEF.SaveChangesAsync();
-            return savedCity;
+            return savedOrigin;
         }
     }
 }

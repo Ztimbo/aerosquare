@@ -10,10 +10,11 @@ namespace AeroSquare.Entities
     public class City
     {
         [Key]
-        public int Id { get; set; }
+        public int CityId { get; set; }
         [StringLength(100)]
         public string Name { get; set; }
-        public bool IsOrigin { get; set; }
-        public bool IsDestination { get; set; }
+
+        public Destination Destination { get; set; }
+        public Origin Origin { get; set; }
     }
 }
