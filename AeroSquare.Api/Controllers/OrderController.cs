@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AeroSquare.Api.Controllers
 {
     [ApiController]
-    [Route("api/airplane")]
+    [Route("api/order")]
     [EnableCors("AllowAll")]
     public class OrderController : ControllerBase
     {
