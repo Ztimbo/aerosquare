@@ -45,7 +45,7 @@ namespace AeroSquare.Repository.Repos
                 throw new FileNotFoundException();
             }
 
-            savedOrigin.CityId = origin.CityId;
+            savedOrigin.City.CityId = origin.City.CityId;
 
             _flightsDbContextEF.Origin.Update(savedOrigin);
             await _flightsDbContextEF.SaveChangesAsync();
