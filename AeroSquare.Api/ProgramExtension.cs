@@ -20,12 +20,14 @@ namespace AeroSquare.Api
             services.AddTransient<ICityService, CityService>();
             services.AddTransient<IOriginService, OriginService>();
             services.AddTransient<IFlightService, FlightService>();
+            services.AddTransient<IOrderService, OrderService>();
 
             //Repos
             services.AddTransient<IAirplaneRepository, AirplaneRepository>();
             services.AddTransient<ICityRepository, CityRepository>();
             services.AddTransient<IOriginRepository, OriginRepository>();
             services.AddTransient<IFlightRepository, FlightRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
 
             //AutoMapper
             services.AddAutoMapper(typeof(Program));
