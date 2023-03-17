@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AeroSquare.Api.Migrations
 {
     [DbContext(typeof(FlightsDbContextEF))]
-    [Migration("20230317001743_Initial")]
+    [Migration("20230317011533_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -174,9 +174,6 @@ namespace AeroSquare.Api.Migrations
                     b.Property<DateTime>("DepartureTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("DestinatinId")
-                        .HasColumnType("int");
-
                     b.Property<int>("DestinationId")
                         .HasColumnType("int");
 
@@ -204,11 +201,110 @@ namespace AeroSquare.Api.Migrations
                         {
                             FlightId = 1,
                             AirplaneId = 1,
-                            ArrivalTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DepartureTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ArrivalTime = new DateTime(1900, 1, 1, 7, 45, 0, 0, DateTimeKind.Unspecified),
+                            DepartureTime = new DateTime(1900, 1, 1, 6, 15, 0, 0, DateTimeKind.Unspecified),
                             DestinationId = 1,
                             FlightNumber = "AES 108",
                             ListPrice = 1037.28,
+                            OriginId = 1
+                        },
+                        new
+                        {
+                            FlightId = 2,
+                            AirplaneId = 2,
+                            ArrivalTime = new DateTime(1900, 1, 1, 14, 16, 0, 0, DateTimeKind.Unspecified),
+                            DepartureTime = new DateTime(1900, 1, 1, 10, 23, 0, 0, DateTimeKind.Unspecified),
+                            DestinationId = 3,
+                            FlightNumber = "AES 210",
+                            ListPrice = 1500.1700000000001,
+                            OriginId = 2
+                        },
+                        new
+                        {
+                            FlightId = 3,
+                            AirplaneId = 3,
+                            ArrivalTime = new DateTime(1900, 1, 1, 21, 25, 0, 0, DateTimeKind.Unspecified),
+                            DepartureTime = new DateTime(1900, 1, 1, 20, 16, 0, 0, DateTimeKind.Unspecified),
+                            DestinationId = 1,
+                            FlightNumber = "AES 325",
+                            ListPrice = 927.0,
+                            OriginId = 3
+                        },
+                        new
+                        {
+                            FlightId = 4,
+                            AirplaneId = 2,
+                            ArrivalTime = new DateTime(1900, 1, 1, 11, 34, 0, 0, DateTimeKind.Unspecified),
+                            DepartureTime = new DateTime(1900, 1, 1, 7, 25, 0, 0, DateTimeKind.Unspecified),
+                            DestinationId = 3,
+                            FlightNumber = "AES 218",
+                            ListPrice = 1215.25,
+                            OriginId = 3
+                        },
+                        new
+                        {
+                            FlightId = 5,
+                            AirplaneId = 3,
+                            ArrivalTime = new DateTime(1900, 1, 1, 4, 15, 0, 0, DateTimeKind.Unspecified),
+                            DepartureTime = new DateTime(1900, 1, 1, 23, 38, 0, 0, DateTimeKind.Unspecified),
+                            DestinationId = 2,
+                            FlightNumber = "AES 927",
+                            ListPrice = 2100.0,
+                            OriginId = 4
+                        },
+                        new
+                        {
+                            FlightId = 6,
+                            AirplaneId = 1,
+                            ArrivalTime = new DateTime(1900, 1, 1, 6, 23, 0, 0, DateTimeKind.Unspecified),
+                            DepartureTime = new DateTime(1900, 1, 1, 4, 20, 0, 0, DateTimeKind.Unspecified),
+                            DestinationId = 1,
+                            FlightNumber = "AES 639",
+                            ListPrice = 1450.3599999999999,
+                            OriginId = 5
+                        },
+                        new
+                        {
+                            FlightId = 7,
+                            AirplaneId = 1,
+                            ArrivalTime = new DateTime(1900, 1, 1, 12, 38, 0, 0, DateTimeKind.Unspecified),
+                            DepartureTime = new DateTime(1900, 1, 1, 9, 23, 0, 0, DateTimeKind.Unspecified),
+                            DestinationId = 1,
+                            FlightNumber = "AES 709",
+                            ListPrice = 897.12,
+                            OriginId = 2
+                        },
+                        new
+                        {
+                            FlightId = 8,
+                            AirplaneId = 3,
+                            ArrivalTime = new DateTime(1900, 1, 1, 13, 4, 0, 0, DateTimeKind.Unspecified),
+                            DepartureTime = new DateTime(1900, 1, 1, 10, 16, 0, 0, DateTimeKind.Unspecified),
+                            DestinationId = 4,
+                            FlightNumber = "AES 354",
+                            ListPrice = 1654.8699999999999,
+                            OriginId = 2
+                        },
+                        new
+                        {
+                            FlightId = 9,
+                            AirplaneId = 2,
+                            ArrivalTime = new DateTime(1900, 1, 1, 11, 25, 0, 0, DateTimeKind.Unspecified),
+                            DepartureTime = new DateTime(1900, 1, 1, 6, 59, 0, 0, DateTimeKind.Unspecified),
+                            DestinationId = 4,
+                            FlightNumber = "AES 500",
+                            ListPrice = 1024.3499999999999,
+                            OriginId = 1
+                        },
+                        new
+                        {
+                            FlightId = 10,
+                            AirplaneId = 2,
+                            ArrivalTime = new DateTime(1900, 1, 1, 0, 59, 0, 0, DateTimeKind.Unspecified),
+                            DepartureTime = new DateTime(1900, 1, 1, 22, 4, 0, 0, DateTimeKind.Unspecified),
+                            DestinationId = 2,
+                            FlightNumber = "AES 724",
+                            ListPrice = 1024.3499999999999,
                             OriginId = 1
                         });
                 });

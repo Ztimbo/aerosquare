@@ -102,8 +102,7 @@ namespace AeroSquare.Api.Migrations
                     DepartureTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ArrivalTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AirplaneId = table.Column<int>(type: "int", nullable: false),
-                    ListPrice = table.Column<double>(type: "float", nullable: false),
-                    DestinatinId = table.Column<int>(type: "int", nullable: true)
+                    ListPrice = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -210,8 +209,20 @@ namespace AeroSquare.Api.Migrations
 
             migrationBuilder.InsertData(
                 table: "Flight",
-                columns: new[] { "FlightId", "AirplaneId", "ArrivalTime", "DepartureTime", "DestinatinId", "DestinationId", "FlightNumber", "ListPrice", "OriginId" },
-                values: new object[] { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, "AES 108", 1037.28, 1 });
+                columns: new[] { "FlightId", "AirplaneId", "ArrivalTime", "DepartureTime", "DestinationId", "FlightNumber", "ListPrice", "OriginId" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(1900, 1, 1, 7, 45, 0, 0, DateTimeKind.Unspecified), new DateTime(1900, 1, 1, 6, 15, 0, 0, DateTimeKind.Unspecified), 1, "AES 108", 1037.28, 1 },
+                    { 2, 2, new DateTime(1900, 1, 1, 14, 16, 0, 0, DateTimeKind.Unspecified), new DateTime(1900, 1, 1, 10, 23, 0, 0, DateTimeKind.Unspecified), 3, "AES 210", 1500.1700000000001, 2 },
+                    { 3, 3, new DateTime(1900, 1, 1, 21, 25, 0, 0, DateTimeKind.Unspecified), new DateTime(1900, 1, 1, 20, 16, 0, 0, DateTimeKind.Unspecified), 1, "AES 325", 927.0, 3 },
+                    { 4, 2, new DateTime(1900, 1, 1, 11, 34, 0, 0, DateTimeKind.Unspecified), new DateTime(1900, 1, 1, 7, 25, 0, 0, DateTimeKind.Unspecified), 3, "AES 218", 1215.25, 3 },
+                    { 5, 3, new DateTime(1900, 1, 1, 4, 15, 0, 0, DateTimeKind.Unspecified), new DateTime(1900, 1, 1, 23, 38, 0, 0, DateTimeKind.Unspecified), 2, "AES 927", 2100.0, 4 },
+                    { 6, 1, new DateTime(1900, 1, 1, 6, 23, 0, 0, DateTimeKind.Unspecified), new DateTime(1900, 1, 1, 4, 20, 0, 0, DateTimeKind.Unspecified), 1, "AES 639", 1450.3599999999999, 5 },
+                    { 7, 1, new DateTime(1900, 1, 1, 12, 38, 0, 0, DateTimeKind.Unspecified), new DateTime(1900, 1, 1, 9, 23, 0, 0, DateTimeKind.Unspecified), 1, "AES 709", 897.12, 2 },
+                    { 8, 3, new DateTime(1900, 1, 1, 13, 4, 0, 0, DateTimeKind.Unspecified), new DateTime(1900, 1, 1, 10, 16, 0, 0, DateTimeKind.Unspecified), 4, "AES 354", 1654.8699999999999, 2 },
+                    { 9, 2, new DateTime(1900, 1, 1, 11, 25, 0, 0, DateTimeKind.Unspecified), new DateTime(1900, 1, 1, 6, 59, 0, 0, DateTimeKind.Unspecified), 4, "AES 500", 1024.3499999999999, 1 },
+                    { 10, 2, new DateTime(1900, 1, 1, 0, 59, 0, 0, DateTimeKind.Unspecified), new DateTime(1900, 1, 1, 22, 4, 0, 0, DateTimeKind.Unspecified), 2, "AES 724", 1024.3499999999999, 1 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Destination_CityId",

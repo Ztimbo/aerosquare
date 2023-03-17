@@ -110,8 +110,15 @@ namespace AeroSquare.Repository.DataContext
                 entity.HasMany(x => x.FlightDays).WithMany(x => x.Flights);
                 entity.HasData(
                         new Flight { FlightId = 1, FlightNumber = "AES 108", OriginId = 1, DestinationId = 1, DepartureTime = new DateTime(1900, 1, 1, 6, 15, 0), ArrivalTime = new DateTime(1900, 1, 1, 7, 45, 0), AirplaneId = 1, ListPrice = 1037.28 },
-                        new Flight { FlightId = 2, FlightNumber = "AES 210", OriginId = 4, DestinationId = 3, DepartureTime = new DateTime(1900, 1, 1, 10, 23, 0), ArrivalTime = new DateTime(1900, 1, 1, 14, 16, 0), AirplaneId = 2, ListPrice = 1500.17 },
-                        new Flight { FlightId = 3, FlightNumber = "AES 325", OriginId = 3, DestinationId = 1, DepartureTime = new DateTime(1900, 1, 1, 20, 16, 0), ArrivalTime = new DateTime(1900, 1, 1, 21, 25, 0), AirplaneId = 3, ListPrice = 927 }
+                        new Flight { FlightId = 2, FlightNumber = "AES 210", OriginId = 2, DestinationId = 3, DepartureTime = new DateTime(1900, 1, 1, 10, 23, 0), ArrivalTime = new DateTime(1900, 1, 1, 14, 16, 0), AirplaneId = 2, ListPrice = 1500.17 },
+                        new Flight { FlightId = 3, FlightNumber = "AES 325", OriginId = 3, DestinationId = 1, DepartureTime = new DateTime(1900, 1, 1, 20, 16, 0), ArrivalTime = new DateTime(1900, 1, 1, 21, 25, 0), AirplaneId = 3, ListPrice = 927 },
+                        new Flight { FlightId = 4, FlightNumber = "AES 218", OriginId = 3, DestinationId = 3, DepartureTime = new DateTime(1900, 1, 1, 7, 25, 0), ArrivalTime = new DateTime(1900, 1, 1, 11, 34, 0), AirplaneId = 2, ListPrice = 1215.25 },
+                        new Flight { FlightId = 5, FlightNumber = "AES 927", OriginId = 4, DestinationId = 2, DepartureTime = new DateTime(1900, 1, 1, 23, 38, 0), ArrivalTime = new DateTime(1900, 1, 1, 4, 15, 0), AirplaneId = 3, ListPrice = 2100 },
+                        new Flight { FlightId = 6, FlightNumber = "AES 639", OriginId = 5, DestinationId = 1, DepartureTime = new DateTime(1900, 1, 1, 4, 20, 0), ArrivalTime = new DateTime(1900, 1, 1, 6, 23, 0), AirplaneId = 1, ListPrice = 1450.36 },
+                        new Flight { FlightId = 7, FlightNumber = "AES 709", OriginId = 2, DestinationId = 1, DepartureTime = new DateTime(1900, 1, 1, 9, 23, 0), ArrivalTime = new DateTime(1900, 1, 1, 12, 38, 0), AirplaneId = 1, ListPrice = 897.12 },
+                        new Flight { FlightId = 8, FlightNumber = "AES 354", OriginId = 2, DestinationId = 4, DepartureTime = new DateTime(1900, 1, 1, 10, 16, 0), ArrivalTime = new DateTime(1900, 1, 1, 13, 4, 0), AirplaneId = 3, ListPrice = 1654.87 },
+                        new Flight { FlightId = 9, FlightNumber = "AES 500", OriginId = 1, DestinationId = 4, DepartureTime = new DateTime(1900, 1, 1, 6, 59, 0), ArrivalTime = new DateTime(1900, 1, 1, 11, 25, 0), AirplaneId = 2, ListPrice = 1024.35 },
+                        new Flight { FlightId = 10, FlightNumber = "AES 724", OriginId = 1, DestinationId = 2, DepartureTime = new DateTime(1900, 1, 1, 22, 4, 0), ArrivalTime = new DateTime(1900, 1, 1, 0, 59, 0), AirplaneId = 2, ListPrice = 1024.35 }
                     );
             });
         }
