@@ -20,7 +20,7 @@ namespace AeroSquare.Api.ErrorHandler
             catch(Exception ex)
             {
                 httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                await httpContext.Response.WriteAsJsonAsync(ex);
+                await httpContext.Response.WriteAsJsonAsync(ex.Message);
             }
         }
     }

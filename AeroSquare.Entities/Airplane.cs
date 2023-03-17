@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AeroSquare.Entities
 {
+    [Table("Airplane")]
     public class Airplane
     {
         [Key]
@@ -15,8 +17,6 @@ namespace AeroSquare.Entities
         public string Name { get; set; }
         public short Capacity { get; set; }
         public short FlightCrew { get; set; }
-
-        public Flight Flight { get; set; }
 
     }
 }
