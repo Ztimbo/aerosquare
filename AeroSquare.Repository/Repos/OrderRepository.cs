@@ -26,7 +26,7 @@ namespace AeroSquare.Repository.Repos
             var buffer = Encoding.UTF8.GetBytes(body);
             var byteContent = new ByteArrayContent(buffer);
             byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            await client.PostAsync(_functionUri, byteContent);
+            var result = await client.PostAsync(_functionUri, byteContent);
             return true;
         }
     }
