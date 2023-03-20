@@ -10,7 +10,7 @@ namespace AeroSquare.Entities
     public class Order
     {
         [Key]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [MaxLength(100)]
         public string CustomerName { get; set; }
         [MaxLength(100)]
