@@ -24,5 +24,7 @@ namespace AeroSquare.Entities
         public double Total { get; set; }
         public string FlightDate { get; set; }
         public int PaymentValidated { get; set; }
+
+        public IEnumerable<OrderDetail> OrderDetails { get; set; }
     }
 }
